@@ -44,6 +44,12 @@ class PostsController extends Controller
             'body' => request('body'),
         ]);
 */
+
+        $this->validate(request(), [
+            'title' => 'required|max:10',
+            'body' => 'required',
+        ]);
+
         Post::create(request(['title', 'body']));
 
 
