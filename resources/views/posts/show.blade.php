@@ -2,6 +2,11 @@
 
 @section ('content')
 
-    <h1> 이곳에 포스트가 보여짐. </h1>
+    <div class="col-sm-8 blog-main">
+        <h1> {{ $post->title }} </h1>
+
+        {{ $post->body }} 
+
+    </div>
 
 @endsection

@@ -9,16 +9,15 @@ class PostsController extends Controller
 {
     public function index()
     {
-        //$tasks = Task::all();
-        //return view('posts.index', compact('posts'));
-        return view('posts.index');
+        $posts = Post::latest()->get();
+        $//posts = Post::orderBy('created_at', 'desc')->get();
+        return view('posts.index', compact('posts'));
+
     }
 
-    public function show()
+    public function show(Post $post)
     {
-        //$tasks = Task::all();
-        //return view('posts.index', compact('posts'));
-        return view('posts.show');
+        return view('posts.show', compact('post'));
     }
 
     public function create()
