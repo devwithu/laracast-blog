@@ -11,4 +11,16 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function addCommnet($body)
+    {
+
+        $this->comments()->create(compact('body'));
+
+        //Comment::create([
+        //    'body' => $body,
+        //    'post_id' => $this->id
+        //]);
+
+    }
+
 }

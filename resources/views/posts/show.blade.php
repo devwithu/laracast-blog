@@ -23,6 +23,26 @@
             </ul>
         </div>
 
+        <hr>
+        <div class="card">
+            <div class="card-block">
+                <form method="post" action="/posts/{{ $post->id }}/comments">
+                    {{ csrf_field() }}
+
+
+                    <div class="form-group">
+                        <textarea class="form-control" name="body" placeholder="Your commnet here.">
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btm-primary">Add Commnet</button>
+                    </div>
+                </form>
+
+                @include ('layouts.errors')
+            </div>
+        </div>
+
     </div>
 
 @endsection
