@@ -15,12 +15,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
+    <link href="/css/app.css" rel="stylesheet">
     <link href="/css/blog.css" rel="stylesheet">
   </head>
 
   <body>
 
     @include('layouts.nav')
+
+    @if ($flash = session('message'))
+    <div id="flash-message" class="alert alert-success" role="alert">
+        {{ $flash }}
+    </div>
+    @endif
 
     <div class="blog-header">
       <div class="container">

@@ -16,6 +16,8 @@ class PostsController extends Controller
     public function index(Posts $posts)
     {
 
+        //return session('message');
+
 
         $posts = $posts->all();
 
@@ -94,6 +96,9 @@ class PostsController extends Controller
             'user_id' => auth()->id(),
         ]);
 */
+        session()->flash(
+            'message', 'Your Post has now been published'
+        );
 
         return redirect('/');
 
